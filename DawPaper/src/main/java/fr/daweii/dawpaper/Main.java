@@ -19,7 +19,9 @@ import fr.daweii.dawpaper.Listener.Fleur;
 import fr.daweii.dawpaper.Listener.Region;
 //import fr.daweii.dawpaper.Listener.Test;
 import fr.daweii.dawpaper.yml.CUnTest;
+import org.bukkit.Server;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
@@ -49,21 +51,23 @@ public final class Main extends JavaPlugin {
         getCommand("item").setExecutor(new Item());
         getCommand("cuntest").setExecutor(new CUnTest(this));
 
+        final Server server = getServer();
+        final PluginManager pluginManager = server.getPluginManager();
 
-        getServer().getPluginManager().registerEvents(new DawListener(), this);
-        getServer().getPluginManager().registerEvents(new Region(), this);
-        getServer().getPluginManager().registerEvents(new Fleur(), this);
-        getServer().getPluginManager().registerEvents(new onJump(), this);
-        getServer().getPluginManager().registerEvents(new Click(), this);
-        getServer().getPluginManager().registerEvents(new SetTourelle(this), this);
-        getServer().getPluginManager().registerEvents(new DetectPlayer(this), this);
+        pluginManager.registerEvents(new DawListener(), this);
+        pluginManager.registerEvents(new Region(), this);
+        pluginManager.registerEvents(new Fleur(), this);
+        pluginManager.registerEvents(new onJump(), this);
+        pluginManager.registerEvents(new Click(), this);
+        pluginManager.registerEvents(new SetTourelle(this), this);
+        pluginManager.registerEvents(new DetectPlayer(this), this);
 
 //        getServer().getPluginManager().registerEvents(new Test(), this);
 
-        getServer().addRecipe(CraftC.jetPack(this));
-        getServer().addRecipe(CraftC.gunPowder(this));
+        server.addRecipe(CraftC.jetPack(this));
+        server.addRecipe(CraftC.gunPowder(this));
 
-        getServer().addRecipe(CraftP.Parachute(this));
+        server.addRecipe(CraftP.Parachute(this));
 
     }
 
