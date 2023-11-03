@@ -8,12 +8,14 @@ import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.*;
@@ -128,20 +130,27 @@ public class DawListener implements Listener {
         }
     }
 
-    @EventHandler
-    public void onDied(PlayerDeathEvent event) {
-        Player victim = event.getEntity();
-        Entity killer = victim.getKiller();
-
-        event.deathMessage(
-                Component.text(victim.getName() + " est mort ")
-        );
-
-        if (killer != null) {
-            killer.sendMessage("+1 §2kill §f" + victim.getName());
-            victim.sendMessage("+1 §4mort §fde " + killer.getName());
-        }
-    }
+//    @EventHandler
+//    public void onDied(EntityDamageByEntityEvent event) {
+//        Entity victim = event.getEntity();
+//        Entity dammager = event.getDamager();
+//
+//        Player player = (Player)victim;
+//        Player killer = null;
+//
+//        if (dammager instanceof Player) killer = (Player)dammager;
+//
+//        if (dammager instanceof Arrow) {
+//            Arrow arrow = (Arrow) dammager;
+//            if (arrow.getShooter() instanceof Player) {
+//                killer = (Player) arrow.getShooter();
+//            }
+//        }
+//
+//
+//            killer.sendMessage("+1 §2kill §f" + victim.getName());
+//            victim.sendMessage("+1 §4mort §fde " + killer.getName());
+//    }
 
     @EventHandler
     public void onRespawn(PlayerRespawnEvent event) {

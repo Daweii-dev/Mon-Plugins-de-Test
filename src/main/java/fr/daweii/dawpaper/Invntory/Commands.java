@@ -48,11 +48,11 @@ public class Commands implements CommandExecutor {
             inv.setItem(34, createSkull("Rjukas", "§6Nether-World", 222));
 
             if (!main.inv_grade.contains(player)){
-                inv.setItem(32, createItem(Material.EMERALD, "dfsdfdsf", true, 1, 223));
-                player.sendMessage("true");
-            } else if (main.inv_grade.contains(player)) {
                 inv.setItem(32, createItem(Material.EMERALD, "dfsdfdsf", false, 1, 223));
                 player.sendMessage("false");
+            } else if (main.inv_grade.contains(player)) {
+                inv.setItem(32, createItem(Material.EMERALD, "dfsdfdsf", true, 1, 223));
+                player.sendMessage("true");
             }
 
             player.openInventory(inv);

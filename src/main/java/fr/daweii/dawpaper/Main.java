@@ -19,6 +19,7 @@ import fr.daweii.dawpaper.Listener.DawListener;
 import fr.daweii.dawpaper.Listener.Fleur;
 import fr.daweii.dawpaper.Listener.Region;
 import fr.daweii.dawpaper.Money.Commands.Give;
+import fr.daweii.dawpaper.npc.Clone;
 import fr.daweii.dawpaper.yml.CUnTest;
 import org.bukkit.Server;
 import org.bukkit.entity.Player;
@@ -31,6 +32,9 @@ public final class Main extends JavaPlugin {
 
     public ArrayList<Player> invisible_list = new ArrayList<>();
     public ArrayList<Player> inv_grade = new ArrayList<>();
+
+    public ArrayList<Player> players = new ArrayList<>();
+
 
     @Override
     public void onEnable() {
@@ -54,6 +58,8 @@ public final class Main extends JavaPlugin {
         getCommand("moneygive").setExecutor(new Give(this));
         getCommand("test").setExecutor(new Commands(this));
 
+        getCommand("clone").setExecutor(new Clone());
+
 
 
         final PluginManager pm = getServer().getPluginManager();
@@ -67,20 +73,14 @@ public final class Main extends JavaPlugin {
         pm.registerEvents(new DetectPlayer(this), this);
         pm.registerEvents(new InvListener(this), this);
 
-//        pm.registerEvents(new Test(), this);
 
         final Server s = getServer();
+
+//        Craft
 
         s.addRecipe(CraftC.jetPack(this));
         s.addRecipe(CraftC.gunPowder(this));
         s.addRecipe(CraftP.Parachute(this));
-
-    }
-
-    @Override
-    public void onDisable() {
-        // Plugin shutdown logic
-        System.out.println("DawPaper OFF");
 
     }
 }

@@ -31,7 +31,6 @@ public class InvListener implements Listener {
         if (inv.getOriginalTitle().equals("Menu")){
 
             event.setCancelled(true);
-            player.closeInventory();
 
             switch (current.getItemMeta().getCustomModelData()){
 

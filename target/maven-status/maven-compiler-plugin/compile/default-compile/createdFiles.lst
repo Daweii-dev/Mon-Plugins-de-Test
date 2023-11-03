@@ -3,7 +3,9 @@ fr\daweii\dawpaper\ItemCustom\Parachute\Listeners\Click.class
 fr\daweii\dawpaper\ItemCustom\Tourelle\Listener\DetectPlayer.class
 fr\daweii\dawpaper\ItemCustom\Tourelle\Craft\Tourelle.class
 fr\daweii\dawpaper\ItemCustom\JetPack\CraftJetPack\CraftC.class
+fr\daweii\dawpaper\game\first\tasks\GAutostart.class
 fr\daweii\dawpaper\Main.class
+fr\daweii\dawpaper\game\first\Gstate.class
 fr\daweii\dawpaper\Listener\DawListener.class
 fr\daweii\dawpaper\Money\Commands\Give.class
 fr\daweii\dawpaper\Commands\Staff\openinv.class
@@ -12,11 +14,15 @@ fr\daweii\dawpaper\Commands\Staff\Vanish.class
 fr\daweii\dawpaper\Commands\CommandeTest.class
 fr\daweii\dawpaper\yml\CUnTest.class
 fr\daweii\dawpaper\Invntory\InvListener.class
+fr\daweii\dawpaper\game\first\Listeners\GDamageListeners.class
 fr\daweii\dawpaper\Listener\Fleur.class
 fr\daweii\dawpaper\Invntory\Commands.class
 fr\daweii\dawpaper\ItemCustom\Tourelle\Listener\SetTourelle.class
 fr\daweii\dawpaper\ItemCustom\JetPack\Listeners\onJump.class
+fr\daweii\dawpaper\npc\Clone.class
 fr\daweii\dawpaper\ItemCustom\Commands\Item.class
+fr\daweii\dawpaper\game\first\Listeners\GPlayerListeners.class
+fr\daweii\dawpaper\game\first\tasks\GGameCycle.class
 fr\daweii\dawpaper\ItemCustom\Liste.class
 fr\daweii\dawpaper\Commands\Staff\say.class
 fr\daweii\dawpaper\Money\money.class
