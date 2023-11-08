@@ -32,7 +32,7 @@ public class DawListener implements Listener {
         this.main = main;
     }
 
-    //    public void OnJoin(Main plugins) {this.plugin = plugins;}
+
     Location spawn = new Location(Bukkit.getWorld("world"), 9.5, 103, 7.5, 0, 0);
 
     @EventHandler
